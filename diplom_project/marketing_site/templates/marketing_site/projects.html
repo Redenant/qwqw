@@ -1,0 +1,40 @@
+{% extends 'marketing_site/base.html' %}
+{% block content %}
+{% load static %}
+<div class="container-fluid" style="background: #eee;">
+    <h2 class="text-center text-uppercase color1 mb-0" style="padding: 5% 0;">
+        Наши Работы
+    </h2>
+</div>
+{% for project in projects %}
+    {% if forloop.counter|divisibleby:2 %}
+    <div class="container-fluid ps-0 pe-0 text-white" style="background: black;">
+        <div class="row align-items-center">
+            <div class="col-lg-4 col-md-6 col-sm-12 p-5">
+                <h4 class="card-title mb-2">{{ project.name }}</h4>
+                <p class="card-text card-text-wrapper blockquote">{{ project.description }}</p>
+                <p class="text-muted mt-auto">{{ project.price }} рублей</p>
+                <p class="text-muted mt-auto">{{ project.project_date }}</p>
+            </div>
+            <div class="col-lg-8 col-md-6 col-sm-12">
+                <img src="{% static project.img %}" class="project-img" alt="{{ project.name }}">
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="container-fluid ps-0 pe-0" style="background: #eee;">
+        <div class="row align-items-center">
+            <div class="col-lg-8 col-md-6 col-sm-12">
+                <img src="{% static project.img %}" class="project-img img-fluid" alt="{{ project.name }}">
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 p-5">
+                <h4 class="card-title mb-2">{{ project.name }}</h4>
+                <p class="card-text card-text-wrapper blockquote">{{ project.description }}</p>
+                <p class="text-muted mt-auto">{{ project.price }} рублей</p>
+                <p class="text-muted mt-auto">{{ project.project_date }}</p>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+{% endfor %}
+{% endblock %}

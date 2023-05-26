@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="{% static 'marketing_site/images/logo.jpeg' %}" type="image/x-icon">
+  <link rel="stylesheet" href="{% static 'marketing_site/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'marketing_site/css/fontello.css' %}">
+  <link rel="stylesheet" href="{% static 'marketing_site/css/style.css' %}">
+
+  <!-- Скрипты -->
+  <script src="{% static 'marketing_site/js/jquery-3.6.0.min.js' %}"></script>
+  <script src="{% static 'marketing_site/js/jquery.inputmask.min.js' %}"></script>
+  <script src="{% static 'marketing_site/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'marketing_site/js/script.js' %}"></script>  
+  
+  <title>Рекламное Агентство ЭКСПО {% if title %} - {{ title }} {% endif %}</title>
+</head>
+
+<body>
+  <!-- Шапка -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container container-fluid my-2">
+          <a class="navbar-brand" href="{% url 'home' %}"><img class="rounded mx-auto d-block" src="{% static 'marketing_site/images/logo.jpeg' %}" alt="Проект ЭКСПО" style="max-width: 125px; max-height: 125px;"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+              aria-controls="navbarText" aria-expanded="false" aria-label="Переключатель навигации">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                      <a class="nav-link {% if request.path == '/' %} active{% endif %}" aria-current="page" href="{% url 'home' %}">Главная</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link {% if request.path == '/about/' %} active{% endif %}" href="{% url 'about' %}">О нас</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link {% if request.path == '/services/' %} active{% endif %}" href="{% url 'services' %}">Услуги</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link {% if request.path == '/projects/' %} active{% endif %}" href="{% url 'projects' %}">Наши работы</a>
+                  </li>
+              </ul>
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                {% if user.is_authenticated %}
+                  <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/profile/' %} active{% endif %}" href="{% url 'profile' %}">Профиль</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/my_orders/' %} active{% endif %}" href="{% url 'my_orders' %}">Мои заказы</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/logout/' %} active{% endif %}" href="{% url 'logout' %}">Выход</a>
+                  </li>
+                {% else %}
+                  <li class="nav-item">
+                      <a class="nav-link {% if request.path == '/login/' %} active{% endif %}" href="{% url 'login' %}">Войти</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link {% if request.path == '/register/' %} active{% endif %}" href="{% url 'register' %}">Зарегистрироваться</a>
+                  </li>
+                {% endif %}
+              </ul>
+          </div>
+      </div>
+    </nav>
+  </header>
+  {% block content %}{% endblock %}
+  <!-- Подвал -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <a class="btn btn-outline-light" target="_blank" href="#">
+            <i class="icon-youtube-play"></i>
+          </a>
+          <a class="btn btn-outline-light" target="_blank" href="#">
+            <i class="icon-paper-plane"></i>
+          </a>
+          <a class="btn btn-outline-light" target="_blank" href="#">
+            <i class="icon-vkontakte"></i>
+          </a>
+          <a class="btn btn-outline-light" target="_blank" href="#">
+            <i class="icon-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

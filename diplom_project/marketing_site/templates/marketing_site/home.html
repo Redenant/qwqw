@@ -1,0 +1,204 @@
+{% extends 'marketing_site/base.html' %}
+{% block content %}
+{% load static %}
+<!-- Messages -->
+<div style="background: #eee;">
+  {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} mb-0">
+        {{ message }}
+    </div>
+    {% endfor %}
+  {% endif %}
+</div>
+<!-- Преимущества -->
+<section class="about">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-center text-uppercase color1 mb-5">Мы делаем сами</h2>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-xl-4 col-md-6 col-sm-12 mb-3 mt-3">
+        <div class="itd_circle"><i class="icon-print-1"></i></div>
+        <h5 class="text-center text-uppercase">Цифровая полиграфия</h5>
+        <p class="new-height2">Оперативная цифровая печать. Визитки, листовки, бланки, стикеры, буклеты, блокноты, 
+          каталоги и многое другое. Полиграфический онлайн-калькулятор для удобства и скорости просчёта.</p>
+        <div class="line"></div>
+      </div>
+      <div class="col-xl-4 col-md-6 col-sm-12 mb-3 mt-3">
+        <div class="itd_circle"><i class="icon-picture-2"></i></div>
+        <h5 class="text-center text-uppercase">Дизайн и креатив</h5>
+        <p class="new-height2">В штате компании 4 дизайнера. Разработка логотипа, торговой марки, фирменного стиля. 
+          Дизайн полиграфической продукции, наружной рекламы, web-баннеров и многого другого, 
+          а также адаптация и отрисовка ножей.</p>
+        <div class="line"></div>
+      </div>
+      <div class="col-xl-4 col-md-6 col-sm-12 mb-3 mt-3">
+        <div class="itd_circle"><i class="icon-magic"></i></div>
+        <h5 class="text-center text-uppercase">Верстка полиграфической продукции</h5>
+        <p class="new-height2">Вёрстка любой сложности – каталогов, журналов, книг. Услуга предпечатной 
+          подготовки файлов, а также доработка под требования типографии.</p>
+        <div class="line"></div>
+      </div>
+      <div class="col-xl-4 col-md-6 col-sm-12 mb-3 mt-3">
+        <div class="itd_circle"><i class="icon-gift"></i></div>
+        <h5 class="text-center text-uppercase">Сувенирная продукция</h5>
+        <p class="new-height2">Огромный выбор сувенирной продукции в наличии в Алматы и на заказ. 
+          Нанесение логотипа и брендирование подарков и сувенирной продукции: УФ-печать, 
+          гравировка, шелкография, тампопечать, тиснение, металлостикер.</p>
+        <div class="line"></div>
+      </div>
+      <div class="col-xl-4 col-md-6 col-sm-12 mb-3 mt-3">
+        <div class="itd_circle"><i class="icon-camera"></i></div>
+        <h5 class="text-center text-uppercase">Фоторетушь и цветокоррекция</h5>
+        <p class="new-height2">Обработка фотографий, восстановление старых фото, оперативная 
+          фоторетушь и цветокоррекция. Услуга высококачественного сканирования фотографий.</p>
+        <div class="line"></div>
+      </div>
+      <div class="col-xl-4 col-md-6 col-sm-12 mb-3 mt-3">
+        <div class="itd_circle"><i class="icon-pencil"></i></div>
+        <h5 class="text-center text-uppercase">Копирайтинг</h5>
+        <p class="new-height2">Брендинг, нейминг, все виды написания текстов: от слоганов до 
+          полноценных рекламных концепций. SEO-тексты.</p>
+        <div class="line"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Что мы умеем -->
+<section class="forwhom">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-center text-uppercase color2 mb-5">МЫ ВАМ ПОМОЖЕМ И ОКАЖЕМ СЕРВИС:</h2>
+      </div>
+    </div>
+    <div class="row mb-5 d-flex">
+      <div class="col-md-6 col-sm-12">
+        <h5 class="text-center">Внедрение CRM, Автоматизация, IP-телефония. Дизайн динамических баннеров, обложек, презентаций. IT разработка, верстка сайтов/лендингов и продвижение сайтов, хостинг. SEO и контекстная реклама.</h5>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <h5 class="text-center">Широкоформатная печать и резка, интерьерная печать, баннеры, оракал, объёмные буквы, инсталляции. Мобильные стенды: ролл-апы, X-баннеры, поп-ап стенды.</h5>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <h5 class="text-center">Построение или Аренда удаленного отдела продаж / колл-центра. Лидген под ключ (SMM, Yandex direct). Имиджевое продвижение. Рекрутинг и Аутстаффинг. Съемки и монтаж роликов</h5>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <h5 class="text-center">Профессиональная фотостудия и столь же профессиональный фотограф. Фотосъёмка в студии и на выезде. Портфолио, фотосессии, создание фото для каталогов продукции и меню</h5>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Наши работы -->
+<section class="projects" style="background-color: #eee;">
+  <div class="container align-items-center">
+    <div class="row">
+      <div class="col-8">
+        <h3 class="text-uppercase text-center color2">Оцените работы нашего агентства</h3>
+      </div>
+      <div class="col-4">
+        <a href="{% url 'projects' %}" class="btn bg3">Наши работы</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- О цифрах -->
+<section class="facts" style="background-color: black; color: var(--color1)">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-center text-white mb-5">Рекламное агентство <span class=" text-uppercase color1">Экспо</span> — каждый день решаем задачи бизнеса.</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-lg-2 text-center">
+        <h3 class="text-uppercase">10 лет</h3>
+        <p class="text-center text-white">На рынке рекламы</p>
+      </div>
+      <div class="col-sm-12 col-lg-2 text-center">
+        <h3 class="text-uppercase">1 000 000$</h3>
+        <p class="text-center text-white">Заработано для клиентов</p>
+      </div>
+      <div class="col-sm-12 col-lg-2 text-center">
+        <h3>500 +</h3>
+        <p class="text-center  text-white">Успешных проектов</p>
+      </div>
+      <div class="col-sm-12 col-lg-2 text-center">
+        <h3>50 +</h3>
+        <p class="text-center  text-white">Клиентов на обслуживании</p>
+      </div>
+      <div class="col-sm-12 col-lg-2 text-center">
+        <h3>300 +</h3>
+        <p class="text-center text-white">Сделали сайтов</p>
+      </div>
+      <div class="col-sm-12 col-lg-2 text-center">
+        <h3>250 +</h3>
+        <p class="text-center text-white">Нарисовали логотипов</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Отзывы -->
+<section class="reviews">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-center text-uppercase color2 mb-5">Отзывы</h2>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-4 col-sm-12">
+        <img src="{% static 'marketing_site/images/review1.jpg' %}" class="rounded mx-auto d-block" alt="review1" style="max-width: 130px; max-height: 130px;">
+        <h4 class="text-center mb-3 mt-3">Директор по маркетингу <br> Fashion Group Шорохова Е.С</h4>
+        <blockquote class="blockquote new-height">
+          <p class="text-center">После начала работы с Экспо количество лидов выросло на 48% в первый же месяц! 
+            Спасибо большое за качественную работу и отличные результаты.</p>
+        </blockquote>
+        <div class="line bg2"></div>
+      </div>
+      <div class="col-lg-4 col-sm-12">
+        <img src="{% static 'marketing_site/images/review2.jpg' %}" class="rounded mx-auto d-block" alt="review2" style="max-width: 120px; max-height: 120px;">
+        <h4 class="text-center mb-3 mt-3">Начальник отдела продаж Highvill <br> Ли Вон Хи</h4>
+        <blockquote class="blockquote new-height">
+          <p class="text-center">Highvill выражает благодарность за стабильное и 6-летнее плодотворное сотрудничество с Вашей компанией! Желаем достижение еще больших высот!</p>
+        </blockquote>
+        <div class="line bg2"></div>
+      </div>
+      <div class="col-lg-4 col-sm-12">
+        <img src="{% static 'marketing_site/images/review3.jpg' %}" class="rounded mx-auto d-block" alt="review3" style="max-width: 145px; max-height: 145px;">
+        <h4 class="text-center mb-3 mt-3">Директор представительства <br> Bork Ахметов К.Р.</h4>
+        <blockquote class="blockquote new-height">
+          <p class="text-center">«Выражаем вам свою благодарность за продуктивное сотрудничество! Желаем вам успешного развития, плодотворных идей и возможностей для их воплощения!»</p>
+        </blockquote>
+        <div class="line bg2"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Форма -->
+<section class="consultation">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-center text-uppercase color1 mb-5">Цены</h2>
+      </div>
+    </div>
+    <div class="row justify-content-center b-quote">
+      <div class="col-md-8 col-sm-10">
+        <blockquote>
+          <p class="text-center h5">
+            Цена рекламной кампании зависит от:<br>
+            Бюджета <br> Стратегии <br> Площадок <br> и других факторов <br> <br>
+            Мы подготовим вам медиаплан и разработаем стратегию рекламной кампании
+            после того как узнаем ваши цели и задачи. Уверены что сможем вместе найти
+            верный подход и сделать рекламную кампанию максимально эффективной!
+          </p>
+        </blockquote>
+      </div>
+    </div>
+    {% include 'marketing_site/modal-windows.html' %}
+  </div>
+</section>
+{% endblock %}
